@@ -34,6 +34,21 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- <Leader>f{char} to move to {char}
+vim.keymap.set('n', '<Leader>f', '<Plug>(easymotion-bd-f)', { silent = true })
+vim.keymap.set('n', '<Leader>f', '<Plug>(easymotion-overwin-f)', { silent = true })
+
+-- s{char}{char} to move to {char}{char}
+vim.keymap.set('n', 's', '<Plug>(easymotion-overwin-f2)', { silent = true })
+
+-- Move to line
+vim.keymap.set('', '<Leader>L', '<Plug>(easymotion-bd-jk)', { silent = true })
+vim.keymap.set('n', '<Leader>L', '<Plug>(easymotion-overwin-line)', { silent = true })
+
+-- Move to word
+vim.keymap.set('', '<Leader>w', '<Plug>(easymotion-bd-w)', { silent = true })
+vim.keymap.set('n', '<Leader>w', '<Plug>(easymotion-overwin-w)', { silent = true })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -49,4 +64,3 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- vim: ts=2 sts=2 sw=2 et
-
